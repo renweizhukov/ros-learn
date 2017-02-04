@@ -1,3 +1,8 @@
+# catkin files
+devel/
+build/
+.catkin_workspace
+
 # Compiled Object files
 *.slo
 *.lo
