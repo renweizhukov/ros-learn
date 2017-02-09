@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(ros_learn)
 
+## Compile the package using C++11.
+add_definitions(-std=c++11)
+
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -123,22 +126,34 @@ include_directories(include
 # add_dependencies(ros_learn ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-add_executable(hello_ros hello.cpp)
+add_executable(helloros hello.cpp)
 add_executable(pubranvel pubranvel.cpp)
 add_executable(subpose subpose.cpp)
+add_executable(revvel reverse_cmd_vel.cpp)
+add_executable(spawnturtle spawn_turtle.cpp)
+add_executable(pubveltoggle pubvel_toggle.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(ros_learn_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(hello_ros
+target_link_libraries(helloros
    ${catkin_LIBRARIES}
 )
 target_link_libraries(pubranvel
    ${catkin_LIBRARIES}
 )
 target_link_libraries(subpose
+   ${catkin_LIBRARIES}
+)
+target_link_libraries(revvel
+   ${catkin_LIBRARIES}
+)
+target_link_libraries(spawnturtle
+   ${catkin_LIBRARIES}
+)
+target_link_libraries(pubveltoggle
    ${catkin_LIBRARIES}
 )
 
